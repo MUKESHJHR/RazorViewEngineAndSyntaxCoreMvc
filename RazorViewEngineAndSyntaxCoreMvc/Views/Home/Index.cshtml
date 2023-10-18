@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h3>Code Block</h3>
+
+@{
+    var greeting = "Welcome to ASP.NET Core MVC!";
+    var weekDay = DateTime.Now.DayOfWeek;
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    var product = new RazorViewEngineAndSyntaxCoreMvc.Models.Product()
+            {
+                ProductID = 1000,
+                Name = "Laptop",
+                Description = "Its a Gaming Laptop",
+                Category = "Electronics",
+                Price = 10000
+            };
+}
+
+<h3>Code Expression</h3>
+
+<p>@greeting</p>
+<p>@DateTime.Now</p>
+<p>Today is : @weekDay thank you </p>
+<p>Name : @product.Name</p>
+<p>Description : @product.Description</p>
+<p>Price : @product.Price</p>
+
+<h3>Variables </h3>
+
+<!-- Storing a string -->
+@{
+    string message = "Welcome to ASP.NET Core MVC";
+}
+
+<!—Storing date and integer-->
+    @{
+        DateTime date = DateTime.Now;
+        int Number = 100;
+    }
+
+<p>@message</p>
+<p> The current date is @date</p>
+<p>Numbers : @Number</p>
+
+    @{
+        var helloWorld = @"Hello ""World""";
+    }
+
+<p>@helloWorld</p>
+
+    @{
+        var Path = @"C:\Windows\";
+    }
+<p>The path is: @Path</p>
+
+    @{
+        var symbol = "You can print @ in html";
+    }
+<p>The @@symbol is: @symbol</p>
+
+    @{
+        var helloWorld1 = @"Hello ""World""";
+    }
+<p>@helloWorld1</p>
+
+    @{
+        var Path1 = @"C:\Windows\";
+    }
+<p>The path is: @Path1</p>
+
+    @{
+        var symbol1 = "You can print @ in html";
+    }
+<p>The @@symbol is: @symbol1</p>
+
+
+    @{
+        int value = 200;
+    }
+
+    @if (value > 100)
+    {
+    <p>Value is greater than 100</p>
+    }
+    else
+    {
+    <p>Value is less than 100</p>
+    }
+
+    @{
+        var value1 = 200;
+        if (value1 > 100)
+        {
+        <p>The value is greater than 100</p>
+        }
+        else
+        {
+        <p>This value is less than 100</p>
+        }
+    }
+
+    @{
+    var value2 = 200;
+}
+
+@switch (value2)
+{
+    case 0:
+        @: value is Zero
+        break;
+    case 100:
+        <p>Value is 100 </p>
+        break;
+    case 200:
+        <p>Value is @value </p>
+        break;
+    case 300:
+        <text>Value is 300</text>
+        break;
+    default:
+        <p>Invalid Value </p>
+        break;
+}
+
+<h3>While loop</h3>
+    @{
+        var r = 0;
+        while (r < 5)
+        {
+            r += 1;
+        <span> @r</span>
+        }
+    }
+
